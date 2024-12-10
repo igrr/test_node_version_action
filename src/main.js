@@ -1,5 +1,6 @@
 const core = require('@actions/core')
 const { wait } = require('./wait')
+const process = require('process')
 
 /**
  * The main function for the action.
@@ -7,6 +8,9 @@ const { wait } = require('./wait')
  */
 async function run() {
   try {
+    core.info(`Running node version: ${process.version}`)
+    core.info(`Node executable path: ${process.execPath}`)
+
     const ms = core.getInput('milliseconds', { required: true })
 
     // Debug logs are only output if the `ACTIONS_STEP_DEBUG` secret is true

@@ -3433,6 +3433,7 @@ exports.debug = debug; // for test
 
 const core = __nccwpck_require__(484)
 const { wait } = __nccwpck_require__(644)
+const process = __nccwpck_require__(932)
 
 /**
  * The main function for the action.
@@ -3440,6 +3441,9 @@ const { wait } = __nccwpck_require__(644)
  */
 async function run() {
   try {
+    core.info('Running node version: {process.version}')
+    core.info('Node executable path: {process.execPath}')
+
     const ms = core.getInput('milliseconds', { required: true })
 
     // Debug logs are only output if the `ACTIONS_STEP_DEBUG` secret is true
@@ -3566,6 +3570,14 @@ module.exports = require("os");
 
 "use strict";
 module.exports = require("path");
+
+/***/ }),
+
+/***/ 932:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("process");
 
 /***/ }),
 
