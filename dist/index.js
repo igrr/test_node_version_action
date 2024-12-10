@@ -3441,8 +3441,8 @@ const process = __nccwpck_require__(932)
  */
 async function run() {
   try {
-    core.info('Running node version: {process.version}')
-    core.info('Node executable path: {process.execPath}')
+    core.info(`Running node version: ${process.version}`)
+    core.info(`Node executable path: ${process.execPath}`)
 
     const ms = core.getInput('milliseconds', { required: true })
 
